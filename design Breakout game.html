@@ -1,0 +1,269 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: http://127.0.0.1:5501/
+Subject: design Breakout game
+Date: Mon, 2 Aug 2021 03:53:03 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--mzzeIRaUBEnDOmfcCQuBmVi2ZH8Q6WWvDEwvSJHYAn----"
+
+
+------MultipartBoundary--mzzeIRaUBEnDOmfcCQuBmVi2ZH8Q6WWvDEwvSJHYAn----
+Content-Type: text/html
+Content-ID: <frame-C273B7DFF142DD0518B4D71985CE8BAA@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://127.0.0.1:5501/
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3DUTF-8"><link rel=3D"stylesheet" type=3D"text/css" href=3D"cid:css-694b5c=
+65-5326-45bc-9532-ffbb0b15963e@mhtml.blink" />
+    <title>design Breakout game</title>
+   =20
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-sc=
+ale=3D1">
+       =20
+       =20
+    <link href=3D"http://127.0.0.1:5501/gamelab.css" rel=3D"stylesheet" typ=
+e=3D"text/css">
+   =20
+   =20
+   =20
+   =20
+  </head>
+  <body class=3D"web" style=3D"margin:0; overflow:hidden; user-select:none;=
+ -webkit-user-select:none; -webkit-touch-callout:none; position:fixed; top:=
+0; left:0; width:400px; height:565px;">
+    <div id=3D"sketch" class=3D"web" style=3D"position:absolute;"><canvas i=
+d=3D"defaultCanvas0" width=3D"400" height=3D"400" style=3D"width: 400px; he=
+ight: 400px;"></canvas></div>
+    <div id=3D"soft-buttons" style=3D"display: none">
+      <button id=3D"leftButton" disabled=3D"" classname=3D"arrow">
+      </button>
+      <button id=3D"rightButton" disabled=3D"" classname=3D"arrow">
+      </button>
+      <button id=3D"upButton" disabled=3D"" classname=3D"arrow">
+      </button>
+      <button id=3D"downButton" disabled=3D"" classname=3D"arrow">
+      </button>
+    </div>
+    <div id=3D"studio-dpad-container" style=3D"position:absolute; width:400=
+px; bottom:5px; height:157px; overflow-y:hidden;"><div id=3D"studio-dpad">
+  <div id=3D"studio-dpad-rim"></div>
+  <div id=3D"studio-dpad-cone"></div>
+  <button id=3D"studio-dpad-button"></button>
+  <button id=3D"studio-space-button"></button>
+</div>
+</div>
+  <!-- Code injected by live-server -->
+
+
+</body></html>
+------MultipartBoundary--mzzeIRaUBEnDOmfcCQuBmVi2ZH8Q6WWvDEwvSJHYAn----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-694b5c65-5326-45bc-9532-ffbb0b15963e@mhtml.blink
+
+@charset "utf-8";
+
+body.expo { background-color: black; }
+
+#sketch.expo.no-controls { top: 82px; }
+------MultipartBoundary--mzzeIRaUBEnDOmfcCQuBmVi2ZH8Q6WWvDEwvSJHYAn----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://127.0.0.1:5501/gamelab.css
+
+@charset "utf-8";
+
+#debugResizeBar { width: 100%; height: 13px; line-height: 13px; color: rgb(=
+198, 202, 205); font-size: 24px; text-align: center; cursor: ns-resize; whi=
+te-space: nowrap; }
+
+#debug-buttons { display: inline; white-space: normal; }
+
+.debugger_button { border: 1px solid rgb(0, 148, 202); background-color: rg=
+b(0, 148, 202); color: rgb(255, 255, 255); margin-left: 0px; margin-right: =
+3px; padding: 3px 6px; font-size: 14px; min-width: 120px; }
+
+#continueButton { border-color: rgb(255, 164, 0); background-color: rgb(255=
+, 164, 0); }
+
+.debugger_button:focus { outline-style: none; }
+
+.debugger_button > img { float: left; opacity: 1; }
+
+#debug-area { position: absolute; bottom: 0px; height: 43px; left: 0px; rig=
+ht: 0px; z-index: 2; max-height: calc(50% - 16px) !important; }
+
+#codeTextbox.pin_bottom { bottom: 43px; }
+
+#debug-commands-header { width: 270px; float: left; border-right: 1px solid=
+ gray; }
+
+#debug-commands-header .fa { margin: 0px 0.25em; }
+
+#debug-watch-header { width: 201px; float: right; border-left: 1px solid gr=
+ay; }
+
+#watchersResizeBar { height: 100%; width: 13px; cursor: ew-resize; position=
+: absolute; right: 193.5px; z-index: 1; top: 13px; }
+
+.debug-commands, .debug-console, .debug-watch { display: block; background-=
+color: rgb(255, 255, 255); border: 1px solid rgb(221, 221, 221); position: =
+absolute; top: 43px; bottom: 0px; }
+
+.debug-commands { left: 0px; width: 270px; text-align: center; }
+
+.debug-watch { right: 0px; width: 200px; overflow-y: scroll; }
+
+.debug-watch.no-commands { max-width: calc(100% - 130px); }
+
+.debug-watch *, .debug-watch input { font-family: monospace; font-size: 12p=
+x; }
+
+.debug-watch-item { margin: 0px 0px 1px; line-height: 14px; clear: both; }
+
+.debug-watch-item .watch-variable, .debug-watch-item .watch-separator { col=
+or: purple; }
+
+.debug-watch-item .watch-unavailable { color: red; }
+
+.debug-console { left: 270px; right: 200px; min-width: 130px; }
+
+.debug-console.no-commands { left: 0px; }
+
+.debug-console.no-watch { right: 0px; }
+
+.debug-console *, .debug-console input { font-family: monospace; font-size:=
+ 12px; }
+
+#slider-cell { float: left; cursor: default; }
+
+.sliderContainer { float: left; }
+
+.sliderTrack { stroke: rgb(235, 232, 241); stroke-width: 4px; stroke-lineca=
+p: round; }
+
+.sliderKnob { fill: rgb(221, 221, 221); stroke: rgb(187, 187, 204); stroke-=
+width: 1px; stroke-linejoin: round; }
+
+.sliderKnob:hover { fill: rgb(238, 238, 238); }
+
+.pause-btn { background-position: 0px -84px; margin-right: 3px; }
+
+.continue-btn { background-position: -21px -84px; margin-right: 3px; }
+
+.step-in-btn { background-position: 0px -105px; margin-right: 3px; }
+
+.step-out-btn { background-position: -21px -105px; margin-right: 3px; }
+
+.step-over-btn { background-position: 0px 21px; margin-right: 3px; }
+
+.Select-input { height: 28px !important; }
+
+.Select-arrow-zone { display: none !important; }
+
+#visualizationOverlay { position: absolute; top: 0px; left: auto; overflow:=
+ hidden; outline: none; user-select: none; pointer-events: none; }
+
+#divGameLab { overflow: hidden; outline: none; position: relative; z-index:=
+ 1; background-color: white; user-select: none; }
+
+#divGameLab.withCrosshair { cursor: crosshair; }
+
+.legacy-share-view #runButton, .legacy-share-view #resetButton { display: n=
+one !important; }
+
+#visualizationOverlay { z-index: 2; }
+
+.icon21 { height: 21px; width: 21px; background-image: url("/blockly/media/=
+gamelab/icons.png"); background-size: 42px 147px; }
+
+.code { background-position: -21px 0px; }
+
+.link { background-position: 0px 0px; }
+
+.run { background-position: 0px -21px; margin-right: 3px; }
+
+.stop { background-position: -21px -21px; margin-right: 3px; }
+
+.dpad-btn { background-position: -21px -63px; }
+
+.left-btn { background-position: -21px -42px; margin-right: 3px; }
+
+.right-btn { background-position: -21px -126px; margin-right: 3px; }
+
+.up-btn { background-position: 0px -63px; margin-right: 3px; }
+
+.down-btn { background-position: 0px -42px; margin-right: 3px; }
+
+#share-cell { display: inline-block; vertical-align: top; }
+
+#share-cell.share-cell-none { display: none; }
+
+.legacy-share-view #studio-dpad-container { margin-top: -24px; }
+
+#studio-dpad { position: absolute; height: 152px; width: 390px; vertical-al=
+ign: top; margin-left: 10px; }
+
+#studio-dpad-rim { position: absolute; width: 0px; height: 0px; border: 76p=
+x solid rgb(255, 255, 255); border-radius: 76px; box-shadow: rgb(127, 127, =
+127) 1px 1px 1px 0px; }
+
+#studio-dpad-cone { position: absolute; margin: 2px; width: 0px; height: 0p=
+x; border: 74px solid rgb(156, 156, 156); border-radius: 74px; }
+
+#studio-dpad-cone.left { border-top-color: rgb(255, 208, 128); transform: r=
+otate(270deg); }
+
+#studio-dpad-cone.left.down { transform: rotate(220deg); }
+
+#studio-dpad-cone.left.up { transform: rotate(320deg); }
+
+#studio-dpad-cone.right { border-top-color: rgb(255, 208, 128); transform: =
+rotate(90deg); }
+
+#studio-dpad-cone.right.down { transform: rotate(140deg); }
+
+#studio-dpad-cone.right.up { transform: rotate(40deg); }
+
+#studio-dpad-cone.up { border-top-color: rgb(255, 208, 128); transform: rot=
+ate(0deg); }
+
+#studio-dpad-cone.down { border-top-color: rgb(255, 208, 128); transform: r=
+otate(180deg); }
+
+#studio-dpad-button { display: inline; position: relative; border-radius: 4=
+0px; width: 80px; height: 80px; margin: 36px 5px 5px 36px; border: 1px soli=
+d rgb(239, 239, 239); background-color: rgb(255, 255, 255); box-shadow: rgb=
+(127, 127, 127) 1px 1px 1px 0px; }
+
+#studio-dpad-button.active { border: 1px solid rgb(159, 159, 159); box-shad=
+ow: none; }
+
+#studio-dpad-button.left { left: -17px; }
+
+#studio-dpad-button.left.up { left: -12px; top: -12px; }
+
+#studio-dpad-button.left.down { left: -12px; top: 12px; }
+
+#studio-dpad-button.right { left: 17px; }
+
+#studio-dpad-button.right.up { left: 12px; top: -12px; }
+
+#studio-dpad-button.right.down { left: 12px; top: 12px; }
+
+#studio-dpad-button.up { top: -17px; }
+
+#studio-dpad-button.down { top: 17px; }
+
+#studio-space-button { position: absolute; border-radius: 40px; width: 80px=
+; height: 80px; right: 10px; margin: 5px; border-color: rgb(102, 102, 102);=
+ background-color: rgb(255, 160, 0); box-shadow: rgb(255, 208, 127) 1px 1px=
+ 0px 0px inset; }
+
+#studio-space-button.active { border-radius: 39px; width: 78px; height: 78p=
+x; margin-right: 6px; margin-top: 6px; }
+
+#studio-space-button:focus { outline: 0px; }
+------MultipartBoundary--mzzeIRaUBEnDOmfcCQuBmVi2ZH8Q6WWvDEwvSJHYAn------
